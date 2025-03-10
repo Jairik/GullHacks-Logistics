@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .faq-section {
+            font-family: 'Asap', sans-serif;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            color: #333;
+        }
+        .faq-subsection {
+            margin-bottom: 25px;
+        }
+        .faq-subsection h3 {
+            border-bottom: 2px solid #4b9cd3;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .faq-question {
+            background: #f7f9fc;
+            padding: 12px 15px;
+            border-radius: 6px;
+            margin-bottom: 5px;
+            cursor: pointer;
+            font-weight: 700;
+            position: relative;
+        }
+        .faq-answer {
+            display: none;
+            background: #fff;
+            padding: 10px 15px;
+            border-left: 4px solid #4b9cd3;
+            margin-bottom: 15px;
+            border-radius: 0 0 6px 6px;
+            line-height: 1.5;
+        }
+        .faq-question.active + .faq-answer {
+            display: block;
+        }
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            font-size: 1.5rem;
+        }
+        .faq-question.active::after {
+            content: '−';
+        }
+    </style>
+</head>
+<body>
+
+<div class="faq-section">
+    <h2>SU Hackathon FAQ</h2>
+
+    <div class="faq-subsection">
+        <h3>General Information</h3>
+        <div class="faq-question">What is a hackathon, and why should I do it?</div>
+        <div class="faq-answer">A hackathon is a weekend of fun and learning. You’ll become a better programmer, meet awesome people, and make cool projects. There will also be opportunities to win fun prizes and network with other programmers and our sponsors. Everybody of all skill levels is invited to attend!</div>
+    </div>
+
+    <div class="faq-subsection">
+        <h3>Event Details</h3>
+        <div class="faq-question">Is SU Hacks 2025 Free?</div>
+        <div class="faq-answer">Yes! SU Hacks is completely free, and anybody who is eligible is welcome to join!</div>
+
+        <div class="faq-question">Will Hackers receive free swag and/or food?</div>
+        <div class="faq-answer">Yes! Each hacker will receive a completely free T-shirt and stickers, along with Lunch, Dinner, and Snacks. Breakfast will not be provided, and more meal details will be announced closer to the event! If you have any food preferences/restrictions, feel free to disclose this on the form or contact us for next steps!</div>
+
+        <div class="faq-question">Who can register for SU Hacks?</div>
+        <div class="faq-answer">TBD. You can find the registration form on the homepage if interested!</div>
+
+        <div class="faq-question">Is parking provided? Where do I go when I arrive?</div>
+        <div class="faq-answer">All parking will be free for attendees in the designated lots! See the location page for more information regarding parking. More information is to be released soon about buildings.</div>
+    </div>
+
+    <div class="faq-subsection">
+        <h3>Teams & Participation</h3>
+        <div class="faq-question">How many people may we have in a team? Can I be a team of one?</div>
+        <div class="faq-answer">Teams must consist of 2-4 people, with solo teams not being allowed (working on a team is an important skill!).</div>
+
+        <div class="faq-question">Do I need to have a team to attend?</div>
+        <div class="faq-answer">Nope! While it is absolutely permissible to come in with a team, you can form your own and meet new people through our official discord server (see home page) or through the brief team-forming event at the beginning of the event!</div>
+
+        <div class="faq-question">How do I qualify for a track? Can I do more than one?</div>
+        <div class="faq-answer">No need to register for a track! All tracks are automatically considered during judging, with teams being eligible for multiple categories.</div>
+    </div>
+
+    <div class="faq-subsection">
+        <h3>Logistics & Support</h3>
+        <div class="faq-question">How do I know what events are going on at what time?</div>
+        <div class="faq-answer">The schedule page on this website shows a general overview of the event, with updates being announced in the discord.</div>
+
+        <div class="faq-question">What do I need to bring?</div>
+        <div class="faq-answer">All you need is the device you plan to participate with (remember a charger!) and anything else you believe you may need. Wi-fi, sufficient outlets, and food will be provided!</div>
+
+        <div class="faq-question">Who do I contact for technical or coding questions?</div>
+        <div class="faq-answer">Hackers are welcome to hop on the #code-help channel of the discord, where other members and mentors can suggest ideas!</div>
+
+        <div class="faq-question">Who can I contact if I have more questions or concerns?</div>
+        <div class="faq-answer">Feel free to send an email to the official Hackathon email, <a href="mailto:HACKATHON@salisbury.edu">HACKATHON@salisbury.edu</a>. Additionally, marked organizers can be reached through the discord channel.</div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+            q.classList.toggle('active');
+        });
+    });
+});
+</script>
+
+</body>
+</html>
