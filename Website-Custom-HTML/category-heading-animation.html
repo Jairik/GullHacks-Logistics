@@ -1,0 +1,107 @@
+<!-- Rotates through the different categories, highlighting them and making them bigger as it appears in the cycle.
+ Also highlights when hovered over -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Category Cycle with Hover Skip</title>
+  <!-- Load Asap font -->
+  <link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Asap', sans-serif;
+      background: transparent;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .category-cycle {
+      text-align: center;
+      font-size: 28px;
+      color: maroon;
+    }
+    .category-text {
+      opacity: 0.3;
+      margin: 0 10px;
+      transition: opacity 1s ease, transform 1s ease;
+      position: relative;
+      display: inline-block;
+      font-size: 28px;
+      cursor: pointer;
+    }
+    /* Active category: fully opaque and scaled up */
+    .category-text.active {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    /* Glistening overlay on the active category */
+    .category-text.active::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+      mix-blend-mode: overlay;
+      transform: skewX(-20deg);
+      animation: glisten 2.5s infinite linear;
+    }
+    @keyframes glisten {
+      0% { left: -150%; }
+      100% { left: 150%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="category-cycle">
+    <span class="category-text">Best Overall</span>
+    <span class="category-text">Best Educational</span>
+    <span class="category-text">Best Use of AI</span>
+    <span class="category-text">Best Cybersecurity</span>
+    <span class="category-text">Best Design</span>
+    <span class="category-text">Best Innovation</span>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const categories = document.querySelectorAll('.category-text');
+      let currentIndex = 0;
+      let intervalId;
+      
+      function cycleCategory() {
+        // Remove active class from all
+        categories.forEach(cat => cat.classList.remove('active'));
+        // Activate current category
+        categories[currentIndex].classList.add('active');
+        // Update index for next cycle
+        currentIndex = (currentIndex + 1) % categories.length;
+      }
+      
+      // Start cycling at 2250ms intervals (25% faster than 3000ms)
+      intervalId = setInterval(cycleCategory, 2250);
+      cycleCategory(); // Immediately activate the first category
+      
+      // When hovering over a category, skip to that category
+      categories.forEach((cat, index) => {
+        cat.addEventListener("mouseenter", function() {
+          clearInterval(intervalId);
+          // Remove active class from all and set the hovered one active
+          categories.forEach(el => el.classList.remove('active'));
+          cat.classList.add('active');
+          // Update currentIndex to this element so that the next cycle starts here
+          currentIndex = index;
+        });
+        cat.addEventListener("mouseleave", function() {
+          // Resume cycling when the mouse leaves
+          intervalId = setInterval(cycleCategory, 2250);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

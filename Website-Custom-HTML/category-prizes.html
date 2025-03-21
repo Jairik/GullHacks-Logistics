@@ -1,0 +1,163 @@
+<!-- Card-like effect for tracks and prizes -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hackathon Award Cards</title>
+  <!-- Load Asap font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+      font-family: 'Asap', sans-serif;
+    }
+    /* Grid container for cards */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    /* Card style */
+    .card {
+      position: relative;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      height: 220px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      padding: 20px;
+    }
+    /* Thin maroon accent bar at the top of each card */
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 5px;
+      width: 100%;
+      background: maroon;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    /* Icon container (centered) */
+    .icon {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .icon img {
+      width: 40px;
+      height: 40px;
+    }
+    /* Category title (slightly larger) */
+    .card h3 {
+      margin: 0 0 10px;
+      text-align: center;
+      font-size: 20px;
+      color: #333;
+    }
+    /* Short description text */
+    .card p {
+      margin: 0;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+    }
+    /* Prize banner initially hidden */
+    .prize {
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      right: 0;
+      background: maroon;
+      color: #fff;
+      font-size: 16px;
+      padding: 10px 0;
+      text-align: center;
+      transition: bottom 0.3s ease;
+    }
+    /* On hover, slide prize banner into view */
+    .card:hover .prize {
+      bottom: 0;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .card-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 480px) {
+      .card-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card-container">
+    <!-- Best Overall -->
+    <div class="card">
+      <div class="icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Trophy Icon">
+      </div>
+      <h3>Best Overall</h3>
+      <p>Outstanding project that excels in every aspect.</p>
+      <div class="prize">Prize: TBD</div>
+    </div>
+    <!-- Best Educational -->
+    <div class="card">
+      <div class="icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Book Icon">
+      </div>
+      <h3>Best Educational</h3>
+      <p>Innovative solution that promotes learning and growth.</p>
+      <div class="prize">Prize: TBD</div>
+    </div>
+    <!-- Best Use of AI -->
+    <div class="card">
+      <div class="icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712015.png" alt="Robot Icon">
+      </div>
+      <h3>Best Use of AI</h3>
+      <p>Creative application of artificial intelligence.</p>
+      <div class="prize">Prize: TBD</div>
+    </div>
+    <!-- Best Cybersecurity -->
+    <div class="card">
+      <div class="icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/484/484613.png" alt="Shield Icon">
+      </div>
+      <h3>Best Cybersecurity</h3>
+      <p>Exceptional protection and security solutions.</p>
+      <div class="prize">Prize: TBD</div>
+    </div>
+    <!-- Best Design -->
+    <div class="card">
+      <div class="icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/565/565284.png" alt="Paint Palette Icon">
+      </div>
+      <h3>Best Design</h3>
+      <p>Sleek, user-friendly, and visually appealing project.</p>
+      <div class="prize">Prize: TBD</div>
+    </div>
+    <!-- Best Innovation -->
+    <div class="card">
+      <div class="icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/2060/2060368.png" alt="Lightbulb Icon">
+      </div>
+      <h3>Best Innovation</h3>
+      <p>Groundbreaking idea that pushes boundaries.</p>
+      <div class="prize">Prize: TBD</div>
+    </div>
+  </div>
+</body>
+</html>
+
+
