@@ -1,6 +1,6 @@
 # GullHacks-Logistics
 
-Various resources, logistics, and presentations regarding SU's first ever Hackathon (SU Hacks)
+Various resources, logistics, and presentations regarding SU's first ever Hackathon (GullHacks)
 
 ## Website Demo (in progress, awaiting publication)
 
