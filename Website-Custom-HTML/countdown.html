@@ -1,5 +1,4 @@
-<!-- Countdown to specified date -->
- <!-- DEVELOPER NOTE: JUST CHANGE THE new Date() line in the JS script with updated date! -->
+<!-- DEVELOPER NOTE: JUST CHANGE THE new Date() line in the JS script with updated date! -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +11,13 @@
             font-family: 'Asap', sans-serif;
             text-align: center;
             background-color: #f8f8f8;
+            padding-top: 1rem;
+        }
+        #event-date {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: .25rem;
         }
         #countdown {
             font-size: 5rem;
@@ -28,11 +34,14 @@
     </style>
 </head>
 <body>
-    <div id="countdown">Loading...</div>
+
+    <div class="glistening-text" id="event-date">October 25<sup>th</sup>, 2025</div>
+    <div class="glistening-text" id="countdown">Loading...</div>
 
     <script>
         function updateCountdown() {
-            var eventDate = new Date("October 25, 2025 09:30:00").getTime();
+            // UPDATED DATE HERE:
+            var eventDate = new Date("October 25, 2025 07:00:00").getTime();
             var now = new Date().getTime();
             var timeLeft = eventDate - now;
 
@@ -46,7 +55,7 @@
             var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-            document.getElementById("countdown").innerHTML = 
+            document.getElementById("countdown").innerHTML =
                 days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 
             setTimeout(updateCountdown, 1000);
